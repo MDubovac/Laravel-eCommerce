@@ -8,7 +8,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>GameShop | Admin</title>
+    <title>GameShop</title>
     <!-- Custom Css -->
     <link rel="stylesheet" href="/css/app.css">    
     <!-- Summernote -->
@@ -32,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
+            <i class="fa fa-search"></i>
           </button>
         </div>
       </div>
@@ -42,11 +42,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="/home" class="brand-link">
-      <img src="/static-img/logo.png" height="50px" width="auto" alt="Logo" class="brand-image img-circle elevation-3">
-      <span class="brand-text font-weight-light">Admin Panel</span>
-    </a>
+    
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -79,7 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         @endif
         <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route("categories.index") }}" class="nav-link">
                 <i class="nav-icon fa fa-list"></i>
                 <p>
                     Categories
