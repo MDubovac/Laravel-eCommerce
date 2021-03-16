@@ -44,6 +44,7 @@ class CategoryController extends Controller
             'name' => $request->name
         ]);
 
+        session()->flash("success", "Category created successfully");
         return redirect(route('categories.index'));
     }
 
@@ -76,6 +77,7 @@ class CategoryController extends Controller
             'name' => $request->name
         ]);
 
+        session()->flash("success", "Category updated successfully");
         return redirect(route('categories.index'));
     }
 
@@ -88,6 +90,8 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
+
+        session()->flash("success", "Category deleted successfully");
         return redirect(route('categories.index'));
     }
 }

@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="container py-4">
-        <a href="{{ route("categories.index")}}" class="btn btn-outline-primary btn-sm mb-3">< Back</a>
+        <a href="{{ route("categories.index")}}" class="btn btn-outline-primary btn-sm mb-3">
+            <i class="fa fa-arrow-circle-left"></i> Back
+        </a>
         <h3>
             {{ isset($category) ? "Edit Category" : "Create Category" }}
         </h3>

@@ -19,11 +19,15 @@
                     <td>{{ $category->name }}</td>
                     <td>
                         <div class="d-flex">
-                            <a href="{{ route("categories.edit", $category->id)}}" class="btn btn-success btn-sm mr-2">Edit</a>
+                            <a class="btn btn-primary btn-sm mr-2" href="{{ route("categories.edit", $category->id)}}">
+                                <i class="fa fa-edit"></i>
+                            </a>
                             <form method="POST" action="{{ route("categories.destroy", $category->id) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                <button class="btn btn-danger btn-sm" type="submit">
+                                    <i class="fa fa-trash"></i>
+                                </button>
                             </form>
                         </div>
                     </td>

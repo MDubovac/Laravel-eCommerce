@@ -42,8 +42,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    
-
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
@@ -106,9 +104,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <div class="container">
-      @if (session()->has('s'))
+      @if (session()->has('success'))
         <div class="alert alert-success mt-2">
-          {{ session()->get('s') }}
+          {{ session()->get('success') }}
         </div>
       @endif
       @if (session()->has('error'))
