@@ -80,6 +80,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
             </a>
         </li>    
+
+        <li class="nav-item">
+          <a href="{{ route("products.index") }}" class="nav-link">
+              <i class="nav-icon fa fa-shopping-basket"></i>
+              <p>
+                  Products
+              </p>
+          </a>
+      </li> 
         
         <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"

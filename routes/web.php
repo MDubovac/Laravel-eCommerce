@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Caregories
 Route::resource("categories", "CategoryController");
+
+// Products
+Route::resource("products", "ProductController");
