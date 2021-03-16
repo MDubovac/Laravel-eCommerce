@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.banner{
+    height: 90vh;
+    background-image: url("../static-img/car2.jpg");
+    background-size: cover;
+}
+.banner-text{
+    color:white;
+    text-align: center;
+    padding-top: 10%;
+}
+.banner-text h1{
+    font-size: 5.3em;
+}
+.scroll-icon{
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2em;
+    animation: scroll 1.5s infinite;
+}
+
+.card-bot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Keyframes */
+@keyframes scroll{
+    0%  { opacity: 1 }
+    50% { opacity: 0 }
+    100%{ opacity: 1 }
+}

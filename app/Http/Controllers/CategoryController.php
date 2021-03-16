@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\User;
 
 class CategoryController extends Controller
 {
+    /**
+     * Constructor
+     * Middleware
+     */
+    public function __construct(){
+        $this->middleware(['auth', 'admin.middleware']);
+    }
     /**
      * Display a listing of the resource.
      *

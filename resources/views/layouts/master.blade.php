@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -25,18 +21,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
     </ul>
-
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
   </nav>
   <!-- /.navbar -->
 
@@ -88,7 +72,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   Products
               </p>
           </a>
-      </li> 
+        </li> 
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-shopping-cart"></i>
+              <p>
+                  Orders
+              </p>
+          </a>
+        </li> 
         
         <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
@@ -136,7 +129,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       Made with <i class="fa fa-heart"></i> by <a href="https://github.com/MDubovac"> Mladen Dubovac</a>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2020 Blog Test</strong>
+    <strong>Copyright &copy; 2021 e-Commerce</strong>
     <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
   </footer>
 </div>

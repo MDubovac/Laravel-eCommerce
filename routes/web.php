@@ -13,16 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Common Routes
 Route::get('/', function () {
-    return view('welcome');
+    return view('common.home');
 });
+
+Route::get('/home', function () {
+    return view('common.home');
+});
+
+Route::get('/contact', function () {
+    return view('common.contact');
+});
+
+Route::get('/product-list', 'CommonController@productList' );
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-// Caregories
+// Categories
 Route::resource("categories", "CategoryController");
-
 // Products
 Route::resource("products", "ProductController");
+

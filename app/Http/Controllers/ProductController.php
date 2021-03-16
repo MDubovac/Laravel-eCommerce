@@ -10,6 +10,13 @@ use Illuminate\Validation\Rule;
 class ProductController extends Controller
 {
     /**
+     * Constructor
+     * Middleware
+     */
+    public function __construct(){
+        $this->middleware(['auth', 'admin.middleware']);
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
