@@ -26,10 +26,17 @@ Route::get('/contact', function () {
     return view('common.contact');
 });
 
-Route::get('/product-list', 'CommonController@productList' );
+// Products
+Route::get('/product-list', 'CommonController@productList')->name('common.product-list');
+Route::get('/product-details/{product}', 'CommonController@productDetails')->name('common.product-details');
+Route::delete('/cart/{id}', 'CartController@destroy');
 
+// Cart
+Route::get("/cart", 'CartController@index')->name('cart.index');
+Route::post("/cart", 'CartController@store')->name('cart.store');
+
+// Auth
 Auth::routes();
-
 
 // Categories
 Route::resource("categories", "CategoryController");

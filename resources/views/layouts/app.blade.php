@@ -43,32 +43,54 @@
                         <li class="nav-item">
                             <a href="/contact" class="nav-link">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa fa-shopping-cart"></i> Cart
-                            </a>
-                        </li>
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="{{ route("cart.index")}}" class="nav-link">
+                                <i class="fa fa-shopping-cart"></i> Cart
+                                @if (Cart::instance()->count() > 0)
+                                    <span class="badge badge-light">
+                                        {{ Cart::instance()->count() }}
+                                    </span>
+                                @endif
+                            </a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
+                       
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                                 Signup 
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="{{ route("login") }}">Login</a>
+                              <a class="dropdown-item" href="{{ route("register") }}">Register</a>
+                            </div>
+                        </li>
+
+
+
+                       <!--  <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">
+                                <button class="btn btn-outline-info">{{ __('Login') }}</button>
+                            </a>
+                        </li>
+                        @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">
-                                    <button class="btn btn-outline-info">{{ __('Login') }}</button>
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    <button class="btn btn-info">{{ __('Register') }}</button>
                                 </a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">
-                                        <button class="btn btn-info">{{ __('Register') }}</button>
-                                    </a>
-                                </li>
-                            @endif
+                        @endif -->
+
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa fa-user"></i>
                                     {{ Auth::user()->name }}
                                 </a>
 

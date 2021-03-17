@@ -28,8 +28,14 @@
                             <h5 class="card-title">{{ $prod->name }}</h5>
                             <h4 class="card-text">{{ $prod->price }} $</h4>
                             <div class="d-flex">
-                                <a href="#" class="btn btn-outline-primary mr-2">Details</a>
-                                <a href="#" class="btn btn-primary">Add to cart</a>
+                                <a href="{{ route("common.product-details", $prod->id) }}" class="btn btn-outline-primary mr-2">Details</a>
+                                <form action="/cart" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $prod->id }}">
+                                    <input type="hidden" name="name" value="{{ $prod->name }}">
+                                    <input type="hidden" name="price" value="{{ $prod->price }}">
+                                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                </form>
                             </div>
                         </div>
                     </div>
