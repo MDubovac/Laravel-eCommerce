@@ -23,15 +23,43 @@
     animation: scroll 1.5s infinite;
 }
 
-.card-bot{
+.shop-page{
+    display: grid;
+    grid-template-columns: 20% 90%;
+}
+.products{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.card:hover{
+    box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+#li-cat{
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+#li-cat i{
+    font-size: 1.5em;
+}
+.pagination{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 873px){
+    .shop-page{
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Keyframes */
 @keyframes scroll{
-    0%  { opacity: 1 }
-    50% { opacity: 0 }
-    100%{ opacity: 1 }
+    0%   { opacity: 1 }
+    50%  { opacity: 0 }
+    100% { opacity: 1 }
 }

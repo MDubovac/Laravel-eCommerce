@@ -2,41 +2,44 @@
 
 @section('content')
     <div class="container">
-        <h2>Products Page</h2>
-        <div class="row">
-            <div class="col-md-2">
-                <ul class="list-group">
-                    <li class="list-group-item">2121</li>
-                    <li class="list-group-item">2121</li>
-                    <li class="list-group-item">2121</li>
-                    <li class="list-group-item">2121</li>
+        <h2 class="py-2">Product List</h2>
+        <div class="shop-page">
+
+            <div class="sidebar">
+                <ul class="list-group mb-4">
+                    <li id="li-cat" class="list-group-item active">
+                        Categories
+                        <i class="fa fa-angle-down"></i>     
+                    </li>
+                    
+                    @foreach ($allCategories as $cat)
+                        <li class="list-group-item">
+                            <a href="">{{ $cat->name }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
-            <div class="col-md-10">
-               <div class="row">
-                    @foreach ($allProducts as $product)
-            
-                        <div class="col-md-4">
-                            <div class="product">
-                                <div class="card" style="width: 18rem;">
-                                    <img class="card-img-top" src="/storage/{{ $product->image }}" alt="Card image cap">
-                                    <div class="card-body">
-                                      <h5 class="card-title">{{ $product->name }}</h5>
-                                      <p class="card-text">
-                                          {!! html_entity_decode($product->desc) !!}
-                                      </p>
-                                      <div class="card-bot">
-                                        <h4>{{ $product->price }} $</h4>
-                                        <a href="#" class="btn btn-primary">Add to cart</a>
-                                      </div>
-                                    </div>
-                                  </div>
+
+            <div class="products">
+                @foreach ($allProducts as $prod)
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="/storage/{{ $prod->image }}" height="160px">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $prod->name }}</h5>
+                            <h4 class="card-text">{{ $prod->price }} $</h4>
+                            <div class="d-flex">
+                                <a href="#" class="btn btn-outline-primary mr-2">Details</a>
+                                <a href="#" class="btn btn-primary">Add to cart</a>
                             </div>
                         </div>
-
-                    @endforeach
-               </div>
+                    </div>
+                @endforeach
             </div>
+        
+        </div>
+
+        <div class="pagination">
+            {{ $allProducts->links() }}
         </div>
     </div>
 @endsection
