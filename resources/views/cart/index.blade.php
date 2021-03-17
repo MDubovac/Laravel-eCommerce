@@ -6,6 +6,11 @@
     @if (\Cart::count() > 0)
     <div class="row">
         <div class="col-sm-12 col-md-12 col-md-offset-1">
+            @if (session()->has('cart-success'))
+                <div class="alert alert-success">
+                    {{ session()->get('cart-success') }}
+                </div>
+            @endif
             <table class="table table-hover">
                 <thead>
                     <tr>
